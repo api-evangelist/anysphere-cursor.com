@@ -8,8 +8,8 @@ deployment:
   mode: none
   auth: unknown
   verified: probed
-note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on cursor.com, api.cursor.com, forum.cursor.com, status.cursor.com; verdict
-  opaque (https://status.cursor.com/mcp answered 403: the edge authenticates before it routes, which proves nothing either way). Candidate tools
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on api.cursor.com, api.clarity.com, cursor.com, clarity.com; verdict
+  opaque (https://api.clarity.com/mcp answered 401: the edge authenticates before it routes, which proves nothing either way). Candidate tools
   below are derived from the 105 operation(s) in the provider''s own OpenAPI (40 listed); they describe what a server WOULD expose, not one that
   exists.'
 tools:

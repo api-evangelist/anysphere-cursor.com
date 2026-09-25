@@ -3,9 +3,9 @@ method: derived
 source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
 generator: derive-hosts.py
 summary:
-  hosts: 7
+  hosts: 8
   own: 6
-  other_domain: 1
+  other_domain: 2
   platform: 0
   roles:
   - api
@@ -16,6 +16,14 @@ summary:
   - status
   - website
 hosts:
+- host: api.clarity.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: clarity.com
+  role: api
+  relation: other-domain
 - host: api.cursor.com
   found_by:
   - apis[]
@@ -32,6 +40,9 @@ hosts:
 - host: clarity.com
   found_by:
   - pointer
+  - probed
+  - contract-discovery
+  - well-known
   types:
   - Security
   serves: []
@@ -48,6 +59,11 @@ hosts:
   - contract-discovery
   - well-known
   types:
+  - Compliance
+  - TermsOfService
+  - Support
+  - PrivacyPolicy
+  - Pricing
   - Login
   - GettingStarted
   - APIReference
@@ -62,7 +78,6 @@ hosts:
   found_by:
   - pointer
   - probed
-  - site-links
   - namespace-probe
   - well-known
   - vendor-detect
@@ -80,7 +95,6 @@ hosts:
   found_by:
   - probed
   - site-links
-  - contract-discovery
   - well-known
   types: []
   serves: []
@@ -92,7 +106,6 @@ hosts:
   - pointer
   - probed
   - site-links
-  - contract-discovery
   - well-known
   types:
   - StatusPage

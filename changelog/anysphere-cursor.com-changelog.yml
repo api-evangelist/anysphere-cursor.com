@@ -17,48 +17,63 @@ entries:
     on the same run instead of being dropped when the parent turn ends.
   - Annotate custom tools. annotations on a local.customTools entry passes MCP tool annotations ( title , readOnlyHint , destructiveHint , idempotentHint
     , openWorldHint ) through to the model.
+  version: 1.0.31
 - breaking: false
   highlights:
   - Long-running local agents keep their credentials fresh. Local runs in TypeScript and Python refresh the short-lived access token before it
     expires, so agents that run for more than an hour no longer fail with authentication errors.
+  version: 1.0.30
 - breaking: false
   highlights:
   - Output schemas on custom tools. outputSchema in TypeScript and output_schema in Python declare a JSON Schema for a custom tool's structured
     result, advertised to the model as the tool's MCP output schema.
+  version: 1.0.29
 - breaking: false
   highlights:
   - Ship the SDK as a single file. Under Bun, @cursor/sdk now resolves to a flat single-file bundle, so bun build --compile works with no import
     change and no more Cannot find module './986.js' .
+  version: 1.0.28
 - breaking: false
   highlights:
   - Restrict the agent's toolset. tools allowlists the built-in tools offered to the model ( [] means text-only), and disallowedTools removes
     tools while keeping the rest.
-- breaking: false
-  highlights:
-  - Log in from the browser in TypeScript. Cursor.auth.login() opens a browser login, mints an API key, and stores it in ~/.cursor/sdk/auth.json
-    ; Cursor.auth.status() and Cursor.auth.logout() round it out.
-- breaking: false
-  highlights:
-  - Usage and cost for local agents. agent.getUsage() in TypeScript and agent.get_usage() in Python now work for local agents too, returning a
-    per-turn breakdown.
-- breaking: false
-  highlights:
-  - Open PRs as the Cursor GitHub App. cloud.openAsCursorGithubApp in TypeScript and open_as_cursor_github_app in Python control PR authorship.
-- breaking: false
-  highlights:
-  - Multi-root local workspaces. Pass local.dirs to load rules, skills, and project context from several folders; cwd stays the single primary
-    working directory.
-- breaking: false
-  highlights:
-  - Clearer Python errors. Failures that previously surfaced as a bare "internal error" now carry the underlying message and code.
-- breaking: false
-  highlights:
-  - Admin command denylists apply to local runs. Shell commands matching your team's admin denylist are rejected with a policy message before
-    they execute, including on paths that skip approval prompts.
+  - Log in from the browser in TypeScript. Cursor.auth.login() opens a browser login, mints an API key, and stores it in ~/.cursor/sdk/auth.json.
+  version: 1.0.27
 - breaking: false
   highlights:
   - Warm up a local workspace before the first send. platform.prewarmLocalWorkspace(options) resolves rules, skills, MCP servers, and ignore files
     ahead of time, so the first send() against that workspace starts immediately.
-scheme: semantic
+  - Custom tools run without approval prompts. Host-defined tools passed via customTools no longer fail with an interactive-approval error on
+    sandboxed or auto-review local runs.
+  version: 1.0.26
+- breaking: false
+  highlights:
+  - Billed usage and cost on demand. agent.getUsage() in TypeScript and agent.get_usage() in Python return token usage, billed cost, and a per-run
+    breakdown for cloud agents.
+  version: 1.0.25
+- breaking: false
+  highlights:
+  - TypeScript and Python now release together. Starting with 1.0.24, @cursor/sdk on npm and cursor-sdk on PyPI ship from the same release and
+    share a version number.
+  - More reliable long-running streams. Streaming responses on heavy runs no longer drop mid-stream.
+  version: 1.0.24
+- breaking: false
+  highlights:
+  - 'Per-send environment variables for cloud runs. Pass send(prompt, { cloud: { envVars } }) to scope env vars to a single run.'
+  - Error details on failed runs. Local and cloud runs that fail now expose a structured error with message and code fields.
+  version: 1.0.23
+- breaking: false
+  highlights:
+  - Token usage on every run. Local runs emit per-turn usage events on run.stream() and cumulative totals on run.wait().
+  version: 1.0.22
+- breaking: false
+  highlights:
+  - Run agents under Bun. agent.send() now works under Bun with the same behavior as Node.
+  version: 1.0.21
+- breaking: false
+  highlights:
+  - The SDK imports cleanly under Bun. Importing @cursor/sdk no longer crashes under Bun.
+  version: 1.0.20
+scheme: semantic versioning (major.minor.patch)
 current_version: 1.0.31
 docs: https://cursor.com/docs/sdk/changelog

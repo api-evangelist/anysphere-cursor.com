@@ -4,14 +4,12 @@ generator: extract-docs-artifacts.py (local)
 source: https://cursor.com/docs/cloud-agent/api/webhooks
 sources:
 - https://cursor.com/docs/cloud-agent/api/webhooks
-description: Cursor webhooks notify you about status changes of an agent.
+description: Cursor webhooks notify you about agent status changes.
 events:
 - event: statusChange
-  description: Sent when an agent transitions to an ERROR or FINISHED state.
+  description: Sent when an agent encounters an ERROR or FINISHED state.
 delivery:
-  signature: X-Webhook-Signature – HMAC‑SHA256 signature in the format sha256=<hex_digest>
+  signature: HMAC-SHA256
   content_type: application/json
-note: 'Each request also includes X-Webhook-ID, X-Webhook-Event (set to statusChange), and User-Agent: Cursor-Agent-Webhook/1.0. Verify the signature
-  using the raw request body and the shared secret as shown in the docs. Webhooks are retried automatically if the endpoint returns a non‑2xx
-  status code.'
+note: Webhooks may be retried if your endpoint returns an error status code.
 docs: https://cursor.com/docs/cloud-agent/api/webhooks

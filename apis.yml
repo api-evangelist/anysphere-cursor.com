@@ -24,6 +24,20 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Compliance
+  url: https://cursor.com/security
+- type: SecurityTxt
+  url: well-known/anysphere-cursor.com-api-security.txt
+- type: TermsOfService
+  url: https://cursor.com/en-US/terms-of-service
+- type: Support
+  url: https://cursor.com/help
+- type: PrivacyPolicy
+  url: https://cursor.com/en-US/privacy
+- type: Pricing
+  url: https://cursor.com/pricing
+- type: TrustCenter
+  url: security/anysphere-cursor.com-trust-center.yml
 - type: SecurityTxt
   url: well-known/anysphere-cursor.com-security.txt
 - type: SecurityTxt
@@ -109,9 +123,24 @@ apis:
     url: json-schema/anysphere-cursor.com-mirror-transition-job-schema.json
   - type: JSONSchema
     url: json-schema/anysphere-cursor.com-repo-schema.json
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: No OpenAPI, AsyncAPI, GraphQL or other machine-readable contract was found despite probing documented API pages.
+  evidence:
+    - url: https://api.cursor.com/openapi.json
+      status: 404
+    - url: https://api.clarity.com/openapi.json
+      status: 403
+  checked: 2026-09-25
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 3
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
 x-enrichment:
   date: '2026-09-25'
   status: enriched
-  artifacts_added: 35
+  artifacts_added: 3
   pass: modular-v1
   engine: identity=local,contract=local,surfaces=local,docs=local
