@@ -1,0 +1,19 @@
+{
+  "provider": "anysphere-cursor.com",
+  "sources": [
+    "anysphere-cursor.com-openapi.yaml"
+  ],
+  "outputs": [
+    "anysphere-cursor.com-originservice-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/anysphere-cursor.com-openapi.yaml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "anysphere-cursor.com-openapi.yaml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+1 apis, 1 total)"
+  ],
+  "skipped": []
+}

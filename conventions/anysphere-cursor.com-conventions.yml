@@ -1,0 +1,22 @@
+generated: '2026-09-25'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://cursor.com/docs/get-started/quickstart
+sources:
+- https://cursor.com/docs/get-started/quickstart
+- https://cursor.com/docs/cloud-agent/setup
+- https://cursor.com/docs/account/enterprise/service-accounts
+idempotency:
+  coverage: none
+  evidence: The only idempotency mention is for the install script, which must be idempotent, but this applies to build scripts, not to API write
+    operations.
+pagination:
+  style: absent
+  evidence: No pagination parameters or response fields are described in the provided pages.
+versioning: absent
+error_envelope: absent
+authentication: 'Bearer token in the Authorization header (e.g., `Authorization: Bearer YOUR_SERVICE_ACCOUNT_API_KEY`).'
+request_tracing: absent
+rate_limit_signaling: absent
+field_expansion: absent
+docs: https://cursor.com/docs/get-started/quickstart

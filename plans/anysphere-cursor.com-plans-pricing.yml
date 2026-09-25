@@ -1,0 +1,37 @@
+generated: '2026-09-25'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://cursor.com/docs/models-and-pricing
+sources:
+- https://cursor.com/docs/models-and-pricing
+- https://cursor.com/docs/agent/plan-mode
+name: Anysphere Cursor.com pricing
+audience: business-product
+pricing_basis: per-seat
+plans:
+- name: Start (India only)
+  price_text: ₹649/mo, tax inclusive
+  price: 649
+  description: Lower‑priced plan for developers in India covering the Cursor Models pool and Cloud Agents.
+- name: Pro
+  price_text: $20/mo
+  price: 20
+  description: Includes unlimited tab completions, extended agent usage limits, Bugbot, and Cloud Agents.
+- name: Pro Plus
+  price_text: $60/mo
+  price: 60
+  description: Includes unlimited tab completions, extended agent usage limits, Bugbot, and Cloud Agents.
+- name: Ultra
+  price_text: $200/mo
+  price: 200
+  description: Includes unlimited tab completions, extended agent usage limits, Bugbot, and Cloud Agents.
+- name: Teams Standard
+  price_text: $40/user/mo
+  price: 40
+  description: Business plan offering centralized billing, team marketplace, and shared agent usage.
+- name: Teams Premium
+  price_text: $120/user/mo
+  price: 120
+  description: Adds 5x the Standard limits on Agent usage.
+docs: https://cursor.com/docs/models-and-pricing
+note: 1 extracted row(s) were dropped because their quote was not on the page.

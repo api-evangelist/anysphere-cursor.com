@@ -1,0 +1,11 @@
+generated: '2026-09-25'
+method: generated
+generator: extract-docs-artifacts.py skills (local)
+source: openapi/anysphere-cursor.com-openapi.yaml
+skills:
+- file: skills/anysphere-cursor.com-anysphere-cursor-com-get-app-installati.md
+  name: anysphere-cursor.com-anysphere-cursor-com-get-app-installati
+  api: openapi/anysphere-cursor.com-openapi.yaml
+  operations:
+  - OriginService_ListAppInstallations
+  - OriginService_GetAppInstallation

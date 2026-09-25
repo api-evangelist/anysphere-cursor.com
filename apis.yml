@@ -1,23 +1,117 @@
 aid: anysphere-cursor.com
 name: Anysphere Cursor.com
-description: 'Anysphere Cursor.com is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+image: https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/og/opengraph-default.png
+description: Anysphere Cursor.com, doing business as Cursor, is an applied research lab and subsidiary of SpaceXAI focused on AI-native code editing
+  tools. It offers the Cursor AI coding agent and development environment, targeting developers and enterprises with generative AI for software
+  creation.
 url: https://raw.githubusercontent.com/api-evangelist/anysphere-cursor.com/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
 specificationVersion: '0.20'
 created: '2026-09-25'
 modified: '2026-09-25'
 tags:
-- Company
-apis: []
+- AI Coding
+- Development Tools
+- Cloud Agents
+- CLI
+- Enterprise Software
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: SecurityTxt
+  url: well-known/anysphere-cursor.com-security.txt
+- type: SecurityTxt
+  url: well-known/anysphere-cursor.com-clarity-security.txt
+- type: AgenticAccess
+  url: agentic-access/anysphere-cursor.com-agentic-access.yml
+- type: Plans
+  url: plans/anysphere-cursor.com-plans-pricing.yml
+- type: Spectral
+  url: rules/anysphere-cursor.com-rules.yml
+- type: JSONLD
+  url: json-ld/anysphere-cursor.com-context.jsonld
+- type: Vocabulary
+  url: vocabulary/anysphere-cursor.com-vocabulary.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Webhooks
+  url: asyncapi/anysphere-cursor.com-webhooks.yml
+- type: DataModel
+  url: data-model/anysphere-cursor.com-data-model.yml
+- type: ChangeLog
+  url: changelog/anysphere-cursor.com-changelog.yml
+- type: Conventions
+  url: conventions/anysphere-cursor.com-conventions.yml
+- type: Security
+  url: https://clarity.com/vdp
+- type: Authentication
+  url: authentication/anysphere-cursor.com-authentication.yml
+- type: ErrorCatalog
+  url: errors/anysphere-cursor.com-problem-types.yml
+- type: Conformance
+  url: conformance/anysphere-cursor.com-conformance.yml
+- type: LLMsTxt
+  url: llms/anysphere-cursor.com-llms.txt
+- type: SecurityTxt
+  url: well-known/anysphere-cursor.com-status-security.txt
+- type: SecurityTxt
+  url: well-known/anysphere-cursor.com-cursor-security.txt
+- type: WellKnown
+  url: well-known/anysphere-cursor.com-well-known.yml
+- type: Hosts
+  url: hosts/anysphere-cursor.com-hosts.yml
+- type: Vendors
+  url: vendors/anysphere-cursor.com-vendors.yml
+- type: TrustCenter
+  url: https://trust.cursor.com/
+- type: StatusPage
+  url: https://status.cursor.com/
+- type: Login
+  url: https://cursor.com/login
+- type: GettingStarted
+  url: https://cursor.com/docs/get-started/quickstart
+- type: Documentation
+  url: https://docs.cursor.com/
+- type: APIReference
+  url: https://cursor.com/llms.txt
+- type: VulnerabilityDisclosure
+  url: security/anysphere-cursor.com-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/anysphere-cursor.com-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/anysphere-cursor.com-stock
+  url: https://cursor.com
+apis:
+- aid: anysphere-cursor.com:anysphere-cursor.com-originservice-api
+  name: Anysphere Cursor.com Origin Service API
+  description: The OriginService API from Anysphere Cursor.com — 77 operation(s) for originservice.
+  humanURL: https://cursor.com/docs/api
+  baseURL: https://api.cursor.com
+  tags:
+  - OriginService
+  properties:
+  - type: OpenAPI
+    url: openapi/anysphere-cursor.com-originservice-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/anysphere-cursor.com-check-run-schema.json
+  - type: JSONSchema
+    url: json-schema/anysphere-cursor.com-check-run-input-schema.json
+  - type: JSONSchema
+    url: json-schema/anysphere-cursor.com-pull-request-mergeability-schema.json
+  - type: JSONSchema
+    url: json-schema/anysphere-cursor.com-pull-request-schema.json
+  - type: JSONSchema
+    url: json-schema/anysphere-cursor.com-mirror-transition-job-schema.json
+  - type: JSONSchema
+    url: json-schema/anysphere-cursor.com-repo-schema.json
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 35
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local

@@ -1,0 +1,215 @@
+generated: '2026-09-25'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/anysphere-cursor.com-openapi.yaml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on cursor.com, api.cursor.com, forum.cursor.com, status.cursor.com; verdict
+  opaque (https://status.cursor.com/mcp answered 403: the edge authenticates before it routes, which proves nothing either way). Candidate tools
+  below are derived from the 105 operation(s) in the provider''s own OpenAPI (40 listed); they describe what a server WOULD expose, not one that
+  exists.'
+tools:
+- name: origin_service_get_authenticated_app
+  operationId: OriginService_GetAuthenticatedApp
+  method: GET
+  path: /v1/origin/app
+  description: Returns metadata for the authenticated app.
+- name: origin_service_list_app_installations
+  operationId: OriginService_ListAppInstallations
+  method: GET
+  path: /v1/origin/app/installations
+  description: Lists installations for the authenticated app.
+- name: origin_service_get_app_installation
+  operationId: OriginService_GetAppInstallation
+  method: GET
+  path: /v1/origin/app/installations/{installationId}
+  description: Returns a single installation for the authenticated app.
+- name: origin_service_delete_app_installation
+  operationId: OriginService_DeleteAppInstallation
+  method: DELETE
+  path: /v1/origin/app/installations/{installationId}
+  description: Deletes an installation that belongs to the authenticated app.
+- name: origin_service_create_installation_access_token
+  operationId: OriginService_CreateInstallationAccessToken
+  method: POST
+  path: /v1/origin/app/installations/{installationId}/access_tokens
+  description: Creates an installation access token for the authenticated app.
+- name: origin_service_list_webhook_deliveries
+  operationId: OriginService_ListWebhookDeliveries
+  method: GET
+  path: /v1/origin/app/webhook/deliveries
+  description: Lists webhook deliveries for the authenticated app, newest first.
+- name: origin_service_batch_redeliver_webhook_deliveries
+  operationId: OriginService_BatchRedeliverWebhookDeliveries
+  method: POST
+  path: /v1/origin/app/webhook/deliveries:batchRedeliver
+  description: Asks Origin to send deliveries again.
+- name: origin_service_ping_webhook
+  operationId: OriginService_PingWebhook
+  method: POST
+  path: /v1/origin/app/webhook/pings
+  description: Sends a synthetic `ping` test delivery to the authenticated app's
+- name: origin_service_get_app
+  operationId: OriginService_GetApp
+  method: GET
+  path: /v1/origin/apps/{appId}
+  description: Returns a single app by its identifier.
+- name: origin_service_update_app
+  operationId: OriginService_UpdateApp
+  method: PATCH
+  path: /v1/origin/apps/{appId}
+  description: Updates an app's settings. Omitted fields are left unchanged; at least
+- name: origin_service_add_app_signing_key
+  operationId: OriginService_AddAppSigningKey
+  method: POST
+  path: /v1/origin/apps/{appId}/signing_keys
+  description: Adds a signing key to an app.
+- name: origin_service_revoke_app_signing_key
+  operationId: OriginService_RevokeAppSigningKey
+  method: DELETE
+  path: /v1/origin/apps/{appId}/signing_keys/{kid}
+  description: Revokes an app signing key by its key ID.
+- name: origin_service_list_app_installation_repositories
+  operationId: OriginService_ListAppInstallationRepositories
+  method: GET
+  path: /v1/origin/installation/repos
+  description: Lists repositories accessible to the authenticated app installation.
+- name: origin_service_list_namespaces
+  operationId: OriginService_ListNamespaces
+  method: GET
+  path: /v1/origin/namespaces
+  description: Lists the namespaces the caller can list repos in, ordered by slug.
+- name: origin_service_list_namespace_apps
+  operationId: OriginService_ListNamespaceApps
+  method: GET
+  path: /v1/origin/namespaces/{namespaceSlug}/apps
+  description: Lists apps owned by a namespace, ordered by creation time descending.
+- name: origin_service_create_app
+  operationId: OriginService_CreateApp
+  method: POST
+  path: /v1/origin/namespaces/{namespaceSlug}/apps
+  description: Creates an app owned by a namespace.
+- name: origin_service_add_app_installation_repositories
+  operationId: OriginService_AddAppInstallationRepositories
+  method: POST
+  path: /v1/origin/namespaces/{namespaceSlug}/installations/{installationId}/repos
+  description: Adds repositories to an installation's repository selection.
+- name: origin_service_list_namespace_grants
+  operationId: OriginService_ListNamespaceGrants
+  method: GET
+  path: /v1/origin/owners/{ownerSlug}/grants
+  description: 'Lists who has been granted access to an owner: users, groups, and the'
+- name: origin_service_upsert_namespace_grant
+  operationId: OriginService_UpsertNamespaceGrant
+  method: POST
+  path: /v1/origin/owners/{ownerSlug}/grants
+  description: Sets the permission a user, group, or owning-team group holds directly on
+- name: origin_service_delete_namespace_grant
+  operationId: OriginService_DeleteNamespaceGrant
+  method: DELETE
+  path: /v1/origin/owners/{ownerSlug}/grants
+  description: Removes the permission a user, group, or owning-team group holds directly
+- name: origin_service_list_ssh_certificate_authorities
+  operationId: OriginService_ListSshCertificateAuthorities
+  method: GET
+  path: /v1/origin/owners/{ownerSlug}/ssh-certificate-authorities
+  description: Lists the SSH certificate authorities an owner trusts for git over SSH,
+- name: origin_service_add_ssh_certificate_authority
+  operationId: OriginService_AddSshCertificateAuthority
+  method: POST
+  path: /v1/origin/owners/{ownerSlug}/ssh-certificate-authorities
+  description: Adds an SSH certificate authority the owner trusts. Members of the owning
+- name: origin_service_delete_ssh_certificate_authority
+  operationId: OriginService_DeleteSshCertificateAuthority
+  method: DELETE
+  path: /v1/origin/owners/{ownerSlug}/ssh-certificate-authorities/{certificateAuthorityId}
+  description: Removes an SSH certificate authority from the owner. Every certificate
+- name: origin_service_set_ssh_certificate_requirement
+  operationId: OriginService_SetSshCertificateRequirement
+  method: POST
+  path: /v1/origin/owners/{ownerSlug}/ssh-certificate-authorities:setRequirement
+  description: Sets whether the owner requires SSH certificates. While required, git
+- name: origin_service_get_rate_limit
+  operationId: OriginService_GetRateLimit
+  method: GET
+  path: /v1/origin/rate_limit
+  description: Returns the authenticated principal's current public API rate limit status.
+- name: origin_service_list_repos
+  operationId: OriginService_ListRepos
+  method: GET
+  path: /v1/origin/repos/{ownerSlug}
+  description: Lists repos belonging to an owner entity.
+- name: origin_service_create_repo
+  operationId: OriginService_CreateRepo
+  method: POST
+  path: /v1/origin/repos/{ownerSlug}
+  description: Creates a repo belonging to an owner.
+- name: origin_service_get_repo
+  operationId: OriginService_GetRepo
+  method: GET
+  path: /v1/origin/repos/{ownerSlug}/{repoName}
+  description: Returns a single repo by its `(owner_id, name)` identifier.
+- name: origin_service_update_repo
+  operationId: OriginService_UpdateRepo
+  method: PATCH
+  path: /v1/origin/repos/{ownerSlug}/{repoName}
+  description: Updates repository settings. Omitted fields are left unchanged; at least
+- name: origin_service_list_branches
+  operationId: OriginService_ListBranches
+  method: GET
+  path: /v1/origin/repos/{ownerSlug}/{repoName}/branches
+  description: Lists the repo's branches and tip commits in ascending name order,
+- name: origin_service_post_check_run
+  operationId: OriginService_PostCheckRun
+  method: POST
+  path: /v1/origin/repos/{ownerSlug}/{repoName}/check-runs
+  description: Upserts a check suite + check run using an installation access token with
+- name: origin_service_get_check_run
+  operationId: OriginService_GetCheckRun
+  method: GET
+  path: /v1/origin/repos/{ownerSlug}/{repoName}/check-runs/{checkRunId}
+  description: Returns a single check run by server-assigned id (`cr_…`).
+- name: origin_service_list_check_run_annotations
+  operationId: OriginService_ListCheckRunAnnotations
+  method: GET
+  path: /v1/origin/repos/{ownerSlug}/{repoName}/check-runs/{checkRunId}/annotations
+  description: Lists a check run's annotations in ascending id order. Annotation ids are
+- name: origin_service_create_check_run_annotations
+  operationId: OriginService_CreateCheckRunAnnotations
+  method: POST
+  path: /v1/origin/repos/{ownerSlug}/{repoName}/check-runs/{checkRunId}/annotations
+  description: Atomically appends 1–25 annotations when the run's durable total would
+- name: origin_service_rerequest_check_run
+  operationId: OriginService_RerequestCheckRun
+  method: POST
+  path: /v1/origin/repos/{ownerSlug}/{repoName}/check-runs/{checkRunId}/rerequest
+  description: Asks the app that reported a check run to run it again. Origin records
+- name: origin_service_batch_upsert_check_runs
+  operationId: OriginService_BatchUpsertCheckRuns
+  method: POST
+  path: /v1/origin/repos/{ownerSlug}/{repoName}/check-runs:batchUpsert
+  description: Atomically upserts several check runs belonging to one suite. The request
+- name: origin_service_get_check_suite
+  operationId: OriginService_GetCheckSuite
+  method: GET
+  path: /v1/origin/repos/{ownerSlug}/{repoName}/check-suites/{checkSuiteId}
+  description: Returns check suite metadata by server-assigned id (`crg_…`). Does not
+- name: origin_service_list_check_runs_for_suite
+  operationId: OriginService_ListCheckRunsForSuite
+  method: GET
+  path: /v1/origin/repos/{ownerSlug}/{repoName}/check-suites/{checkSuiteId}/check-runs
+  description: Lists a suite's current check runs. When a run key has been reported
+- name: origin_service_list_commits
+  operationId: OriginService_ListCommits
+  method: GET
+  path: /v1/origin/repos/{ownerSlug}/{repoName}/commits
+  description: Lists commits on a branch or starting ref.
+- name: origin_service_get_commit
+  operationId: OriginService_GetCommit
+  method: GET
+  path: /v1/origin/repos/{ownerSlug}/{repoName}/commits/{sha}
+  description: Returns a single commit by SHA or ref with whole-commit aggregate stats.
