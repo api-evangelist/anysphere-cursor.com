@@ -24,6 +24,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/anysphere-cursor.com-capability-edges.yml
+  name: Anysphere Cursor.com Business Capability Map
 - type: Compliance
   url: https://cursor.com/security
 - type: SecurityTxt
