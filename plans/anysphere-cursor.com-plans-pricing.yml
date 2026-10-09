@@ -74,3 +74,58 @@ plans:
   - Access, network, and audit controls for Grok Bot
   - Priority support and account management
 docs: https://cursor.com/pricing
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - subscription
+  units: []
+  plans:
+  - name: Hobby
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Individual
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Pro
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Pro Plus
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Ultra
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Start (India only)
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Pro Teams
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Enterprise
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
