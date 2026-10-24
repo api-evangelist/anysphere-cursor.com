@@ -1,7 +1,7 @@
 {
   "provider": "anysphere-cursor.com",
   "sources": [
-    "_original/anysphere-cursor.com-openapi.yaml"
+    "_original/anysphere-cursor.com-openapi.yml"
   ],
   "outputs": [
     "anysphere-cursor.com-originservice-api-openapi.yml"
@@ -10,13 +10,9 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "1 archived document(s) dropped as subsets of other archived documents",
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
-    "anysphere-cursor.com-openapi.yaml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "anysphere-cursor.com-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": [
-    "_original/anysphere-cursor.com-openapi_2.yaml: archived document superseded by a larger archived document",
-    "anysphere-cursor.com-originservice-api-openapi.yml: previously refined output, superseded by openapi/_original/"
-  ]
+  "skipped": []
 }
